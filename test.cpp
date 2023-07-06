@@ -11,6 +11,7 @@ private:
 public:
     char *name;
     char level;
+    static int timeToComplete;
 
     // Default Constructor
     Hero()
@@ -78,19 +79,31 @@ public:
         strcpy(this->name, name);
     }
 
+    static int random()
+    {
+        return timeToComplete;
+    }
+
     ~Hero()
     {
         cout << "Destructor called " << endl;
     }
 };
 
+int Hero::timeToComplete = 10;
+
 int main()
 {
 
-    Hero hero1;
+    cout << Hero ::random() << endl;
 
-    Hero *hero2 = new Hero();
-    delete hero2;
+    // Hero h1;
+    // cout << h1.timeToComplete << endl;
+
+    // Hero hero1;
+
+    // Hero *hero2 = new Hero();
+    // delete hero2;
 
     // Hero h1;
     // h1.setHealth(12);
